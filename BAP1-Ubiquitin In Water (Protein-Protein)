@@ -66,3 +66,79 @@ ATOM     14  CG  GLN B   2      24.069  62.277 -30.786  1.00 49.89      B    C
 ATOM     15  CD  GLN B   2      24.242  63.689 -30.246  1.00 56.73      B    C  
 ATOM     16  NE2 GLN B   2      25.326  63.920 -29.526  1.00 56.33      B    N  
 ATOM     17  OE1 GLN B   2      23.354  64.533 -30.404  1.00 59.91      B    O 
+
+8. Next, we are ging to fix the N-terminal HETATM to ATOM.
+
+ATOM      1  N   MSE B   1      22.704  57.510 -34.344  1.00 37.12      B    N  
+ATOM      2  CA  MSE B   1      21.912  58.493 -33.635  1.00 34.17      B    C  
+ATOM      3  C   MSE B   1      22.474  58.729 -32.246  1.00 33.51      B    C  
+ATOM      4  O   MSE B   1      23.180  57.860 -31.637  1.00 33.58      B    O  
+ATOM      5  CB  MSE B   1      20.439  58.068 -33.555  1.00 32.34      B    C  
+ATOM      6  CG  MSE B   1      20.113  57.005 -32.530  1.00 33.87      B    C  
+ATOM      7  CE  MSE B   1      18.269  55.287 -31.492  1.00 36.53      B    C  
+ATOM      8 SE   MSE B   1      18.418  56.398 -32.881  1.00 37.96      B   SE  
+ATOM      9  N   GLN B   2      22.147  59.885 -31.680  1.00 34.44      B    N  
+ATOM     10  CA  GLN B   2      22.617  60.146 -30.300  1.00 33.18      B    C  
+ATOM     11  C   GLN B   2      21.571  59.769 -29.242  1.00 31.44      B    C  
+ATOM     12  O   GLN B   2      20.377  60.039 -29.446  1.00 31.68      B    O  
+ATOM     13  CB  GLN B   2      22.874  61.641 -30.091  1.00 40.26      B    C  
+ATOM     14  CG  GLN B   2      24.069  62.277 -30.786  1.00 49.89      B    C  
+ATOM     15  CD  GLN B   2      24.242  63.689 -30.246  1.00 56.73      B    C  
+ATOM     16  NE2 GLN B   2      25.326  63.920 -29.526  1.00 56.33      B    N  
+ATOM     17  OE1 GLN B   2      23.354  64.533 -30.404  1.00 59.91      B    O  
+
+9. Next, we change the remoteness indicator of selenium SE to sulphur SD.
+10. Each residues have their own remoteness for each atom.
+11. For example, the sulphur atom of Cysteine (CYS) is indicated as SG.
+
+ATOM   1454  N   CYS A  91      29.398  45.507   6.128  1.00  0.87           N  
+ATOM   1455  CA  CYS A  91      28.949  46.897   6.037  1.00  0.87           C  
+ATOM   1456  C   CYS A  91      27.488  47.037   5.619  1.00  0.87           C  
+ATOM   1457  O   CYS A  91      26.779  47.852   6.201  1.00  0.87           O  
+ATOM   1458  CB  CYS A  91      29.828  47.676   5.047  1.00  0.87           C  
+ATOM   1459  SG  CYS A  91      31.510  47.901   5.677  1.00  0.87           S  
+ATOM   1460  H   CYS A  91      30.125  45.204   5.491  1.00  0.87           H  
+ATOM   1461  HA  CYS A  91      29.047  47.375   7.012  1.00  0.87           H  
+ATOM   1462  HB1 CYS A  91      29.390  48.664   4.897  1.00  0.87           H  
+ATOM   1463  HB2 CYS A  91      29.861  47.161   4.086  1.00  0.87           H  
+ATOM   1464  HG  CYS A  91      31.919  46.627   5.566  1.00  0.87           H  
+
+12. Meanwhile, for MET residue, the sulphur atom was indicated as SD.
+
+ATOM   1802  N   MET A 115      17.863  41.473  19.694  1.00  0.88           N  
+ATOM   1803  CA  MET A 115      19.208  41.988  19.473  1.00  0.88           C  
+ATOM   1804  C   MET A 115      19.348  43.426  19.967  1.00  0.88           C  
+ATOM   1805  O   MET A 115      20.384  43.802  20.505  1.00  0.88           O  
+ATOM   1806  CB  MET A 115      19.584  41.893  17.984  1.00  0.88           C  
+ATOM   1807  CG  MET A 115      21.104  41.904  17.778  1.00  0.88           C  
+ATOM   1808  SD  MET A 115      21.653  42.857  16.340  1.00  0.88           S  
+ATOM   1809  CE  MET A 115      21.933  44.455  17.148  1.00  0.88           C  
+ATOM   1810  H   MET A 115      17.317  41.182  18.892  1.00  0.88           H  
+ATOM   1811  HA  MET A 115      19.902  41.371  20.045  1.00  0.88           H  
+ATOM   1812  HB1 MET A 115      19.129  42.723  17.443  1.00  0.88           H  
+ATOM   1813  HB2 MET A 115      19.203  40.963  17.564  1.00  0.88           H  
+ATOM   1814  HG1 MET A 115      21.438  40.874  17.657  1.00  0.88           H  
+ATOM   1815  HG2 MET A 115      21.602  42.305  18.661  1.00  0.88           H  
+ATOM   1816  HE1 MET A 115      22.163  45.209  16.396  1.00  0.88           H  
+ATOM   1817  HE2 MET A 115      21.042  44.752  17.700  1.00  0.88           H  
+ATOM   1818  HE3 MET A 115      22.772  44.376  17.840  1.00  0.88           H 
+
+13. Thus, the atomtype of the sulphur atom of the ubiquitin_clean.pdb for the MSE was changed to SD.
+
+ATOM      1  N   MSE B   1      22.704  57.510 -34.344  1.00 37.12      B    N  
+ATOM      2  CA  MSE B   1      21.912  58.493 -33.635  1.00 34.17      B    C  
+ATOM      3  C   MSE B   1      22.474  58.729 -32.246  1.00 33.51      B    C  
+ATOM      4  O   MSE B   1      23.180  57.860 -31.637  1.00 33.58      B    O  
+ATOM      5  CB  MSE B   1      20.439  58.068 -33.555  1.00 32.34      B    C  
+ATOM      6  CG  MSE B   1      20.113  57.005 -32.530  1.00 33.87      B    C  
+ATOM      7  CE  MSE B   1      18.269  55.287 -31.492  1.00 36.53      B    C  
+ATOM      8  SD  MSE B   1      18.418  56.398 -32.881  1.00 37.96      B    S  
+ATOM      9  N   GLN B   2      22.147  59.885 -31.680  1.00 34.44      B    N  
+ATOM     10  CA  GLN B   2      22.617  60.146 -30.300  1.00 33.18      B    C  
+ATOM     11  C   GLN B   2      21.571  59.769 -29.242  1.00 31.44      B    C  
+ATOM     12  O   GLN B   2      20.377  60.039 -29.446  1.00 31.68      B    O  
+ATOM     13  CB  GLN B   2      22.874  61.641 -30.091  1.00 40.26      B    C  
+ATOM     14  CG  GLN B   2      24.069  62.277 -30.786  1.00 49.89      B    C  
+ATOM     15  CD  GLN B   2      24.242  63.689 -30.246  1.00 56.73      B    C  
+ATOM     16  NE2 GLN B   2      25.326  63.920 -29.526  1.00 56.33      B    N  
+ATOM     17  OE1 GLN B   2      23.354  64.533 -30.404  1.00 59.91      B    O  
