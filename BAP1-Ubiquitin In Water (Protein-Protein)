@@ -1,1 +1,68 @@
+# Pre-Simulation
 
+1. Make sure that all of proteins (BAP1-Ubiquitin) residues does not contain any unrecognised modified residues by forcefield.
+2. For example, Ubiquitin contain unrecognised Selenomethionine (MSE) residues in their structures.
+3. The MSE residues are not recognised in the amber99sb forcefield, thus cannot be converted into gromacs .gro format file.
+4. The MSE residue is the biologically similar to methionine (MET), in which, the sulphur (S) atom of the MET was replaced with selenium (Se) atom of the MSE.
+5. Thus, we need to change the MSE residues to the MET residues in the ubiquitin.pdb file
+6. First, we need to do a bit of clean up to the ubiquitin.pdb files.
+7. The ANISOU header is not needed in the gromacs file format and was removed using the following command;
+
+grep -v "ANISOU" ubiquitin.pdb > ubiquitin_clean.pdb
+
+Eg. Ubiquitin.pdb
+
+HETATM    1  N   MSE B   1      22.704  57.510 -34.344  1.00 37.12      B    N  
+ANISOU    1  N   MSE B   1     3591   7470   3042    682    235    378  B    N  
+HETATM    2  CA  MSE B   1      21.912  58.493 -33.635  1.00 34.17      B    C  
+ANISOU    2  CA  MSE B   1     3299   6865   2821    491    226    444  B    C  
+HETATM    3  C   MSE B   1      22.474  58.729 -32.246  1.00 33.51      B    C  
+ANISOU    3  C   MSE B   1     3236   6701   2794    425    220    477  B    C  
+HETATM    4  O   MSE B   1      23.180  57.860 -31.637  1.00 33.58      B    O  
+ANISOU    4  O   MSE B   1     3247   6750   2761    543    224    410  B    O  
+HETATM    5  CB  MSE B   1      20.439  58.068 -33.555  1.00 32.34      B    C  
+ANISOU    5  CB  MSE B   1     3228   6355   2707    508    218    349  B    C  
+HETATM    6  CG  MSE B   1      20.113  57.005 -32.530  1.00 33.87      B    C  
+ANISOU    6  CG  MSE B   1     3553   6350   2966    601    207    231  B    C  
+HETATM    7  CE  MSE B   1      18.269  55.287 -31.492  1.00 36.53      B    C  
+ANISOU    7  CE  MSE B   1     4177   6239   3465    703    163     35  B    C  
+HETATM    8 SE   MSE B   1      18.418  56.398 -32.881  1.00 37.96      B   SE  
+ANISOU    8 SE   MSE B   1     4224   6623   3575    631    189    135  B   SE  
+ATOM      9  N   GLN B   2      22.147  59.885 -31.680  1.00 34.44      B    N  
+ANISOU    9  N   GLN B   2     3383   6692   3011    244    202    572  B    N  
+ATOM     10  CA  GLN B   2      22.617  60.146 -30.300  1.00 33.18      B    C  
+ANISOU   10  CA  GLN B   2     3258   6438   2913    178    190    600  B    C  
+ATOM     11  C   GLN B   2      21.571  59.769 -29.242  1.00 31.44      B    C  
+ANISOU   11  C   GLN B   2     3204   5912   2831    188    187    508  B    C  
+ATOM     12  O   GLN B   2      20.377  60.039 -29.446  1.00 31.68      B    O  
+ANISOU   12  O   GLN B   2     3317   5779   2942    146    181    489  B    O  
+ATOM     13  CB  GLN B   2      22.874  61.641 -30.091  1.00 40.26      B    C  
+ANISOU   13  CB  GLN B   2     4112   7343   3840    -24    154    754  B    C  
+ATOM     14  CG  GLN B   2      24.069  62.277 -30.786  1.00 49.89      B    C  
+ANISOU   14  CG  GLN B   2     5160   8863   4934    -95    140    893  B    C  
+ATOM     15  CD  GLN B   2      24.242  63.689 -30.246  1.00 56.73      B    C  
+ANISOU   15  CD  GLN B   2     6033   9663   5859   -306     79   1036  B    C  
+ATOM     16  NE2 GLN B   2      25.326  63.920 -29.526  1.00 56.33      B    N  
+ANISOU   16  NE2 GLN B   2     5923   9707   5773   -359     59   1109  B    N  
+ATOM     17  OE1 GLN B   2      23.354  64.533 -30.404  1.00 59.91      B    O  
+ANISOU   17  OE1 GLN B   2     6510   9909   6344   -413     44   1071  B    O  
+
+Eg. ubiquitin_clean.pdb
+
+HETATM    1  N   MSE B   1      22.704  57.510 -34.344  1.00 37.12      B    N  
+HETATM    2  CA  MSE B   1      21.912  58.493 -33.635  1.00 34.17      B    C  
+HETATM    3  C   MSE B   1      22.474  58.729 -32.246  1.00 33.51      B    C  
+HETATM    4  O   MSE B   1      23.180  57.860 -31.637  1.00 33.58      B    O  
+HETATM    5  CB  MSE B   1      20.439  58.068 -33.555  1.00 32.34      B    C  
+HETATM    6  CG  MSE B   1      20.113  57.005 -32.530  1.00 33.87      B    C  
+HETATM    7  CE  MSE B   1      18.269  55.287 -31.492  1.00 36.53      B    C  
+HETATM    8 SE   MSE B   1      18.418  56.398 -32.881  1.00 37.96      B   SE  
+ATOM      9  N   GLN B   2      22.147  59.885 -31.680  1.00 34.44      B    N  
+ATOM     10  CA  GLN B   2      22.617  60.146 -30.300  1.00 33.18      B    C  
+ATOM     11  C   GLN B   2      21.571  59.769 -29.242  1.00 31.44      B    C  
+ATOM     12  O   GLN B   2      20.377  60.039 -29.446  1.00 31.68      B    O  
+ATOM     13  CB  GLN B   2      22.874  61.641 -30.091  1.00 40.26      B    C  
+ATOM     14  CG  GLN B   2      24.069  62.277 -30.786  1.00 49.89      B    C  
+ATOM     15  CD  GLN B   2      24.242  63.689 -30.246  1.00 56.73      B    C  
+ATOM     16  NE2 GLN B   2      25.326  63.920 -29.526  1.00 56.33      B    N  
+ATOM     17  OE1 GLN B   2      23.354  64.533 -30.404  1.00 59.91      B    O 
