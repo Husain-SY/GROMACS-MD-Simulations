@@ -8,8 +8,9 @@
 6. First, we need to do a bit of clean up to the ubiquitin.pdb files.
 7. The ANISOU header is not needed in the gromacs file format and was removed using the following command;
 
+```
 grep -v "ANISOU" ubiquitin.pdb > ubiquitin_clean.pdb
-
+```
 Eg. Ubiquitin.pdb
 
 HETATM    1  N   MSE B   1      22.704  57.510 -34.344  1.00 37.12      B    N  
